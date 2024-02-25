@@ -337,3 +337,80 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 /* Animaciones con GSAP */
+
+
+const setLightMode = () => {
+    document.body.classList.add('light-mode');
+    // Agrega más lógica si es necesario
+};
+
+const setDarkMode = () => {
+    document.body.classList.remove('light-mode');
+    // Agrega más lógica si es necesario
+};
+
+// Verifica el estado actual del modo oscuro al cargar la página
+if (localStorage.getItem('lightMode') === 'enabled') {
+    setDarkMode();
+}
+
+// Escucha los cambios en el interruptor de modo oscuro
+document.getElementById('darkModeSwitch').addEventListener('change', () => {
+    if (document.getElementById('darkModeSwitch').checked) {
+        localStorage.setItem('lightMode', 'enabled');
+        setDarkMode();
+    } else {
+        localStorage.removeItem('lightMode');
+        setLightMode();
+    }
+
+    // Cambia el ícono del interruptor
+    if (document.getElementById('darkModeSwitch').checked) {
+        document.getElementById('darkModeIcon').classList.remove('fa-moon');
+        document.getElementById('darkModeIcon').classList.add('fa-sun');
+    }
+
+    if (!document.getElementById('darkModeSwitch').checked) {
+        document.getElementById('darkModeIcon').classList.remove('fa-sun');
+        document.getElementById('darkModeIcon').classList.add('fa-moon');
+    }
+});
+
+const lightModeEnabled = localStorage.getItem('lightMode') === 'enabled';
+
+if (lightModeEnabled) {
+    setDarkMode();
+}
+
+document.getElementById('darkModeSwitch').checked = lightModeEnabled;
+
+// Agrega un manejador de eventos al interruptor
+document.getElementById('darkModeSwitch').addEventListener('change', function () {
+    if (this.checked) {
+        setLightMode();
+    } else {
+        setDarkMode();
+    }
+});
+
+function loadDarkModePreference() {
+    const darkModePreference = localStorage.getItem('lightMode');
+    if (darkModePreference === 'enabled') {
+        setLightMode();
+    } else {
+        setDarkMode();
+    }
+
+    // Cambia el ícono del interruptor
+    if (darkModePreference === 'enabled') {
+        document.getElementById('darkModeIcon').classList.remove('fa-moon');
+        document.getElementById('darkModeIcon').classList.add('fa-sun');
+    }
+
+    if (darkModePreference !== 'enabled') {
+        document.getElementById('darkModeIcon').classList.remove('fa-sun');
+        document.getElementById('darkModeIcon').classList.add('fa-moon');
+    }
+}
+
+loadDarkModePreference();

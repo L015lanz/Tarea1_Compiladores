@@ -1,9 +1,9 @@
 from django.urls import path
 from .views import menu, hexadecimal_view, binary_view, octal_view, decimal_view, bases_to_binary, bases_to_hexadecimal, bases_to_octal, bases_to_decimal
-from django.views.generic import RedirectView
+
+app_name='conversor'
 
 urlpatterns = [
-   
     path('menu', menu, name='menu'),
     path('hexadecimal', hexadecimal_view, name='hexadecimal'),
     path('binario', binary_view, name='binario'),

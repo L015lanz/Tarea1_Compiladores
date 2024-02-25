@@ -1,7 +1,8 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import render
 from django.http import HttpResponse
 import json
-       
+
+# Vistas
 
 def menu(request):
     return render(request, 'menu.html')

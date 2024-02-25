@@ -11,115 +11,40 @@
   <meta http-equiv="Content-Type" content="text / html; charset = utf-8">
   <meta name="description" content="Las aventuras de mi gato favorito Lucky, con historias, fotos y películas">
   <meta name="keywords" content="cat, Lucky, pet, animal">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: poppins, sans-serif;
-    }
-
-    h1 {
-      color: #333;
-    }
-
-    .container {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 30px;
-      background-color: #f5f5f5;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-      background-color: #fff;
-      width: 90%;
-      max-width: 500px;
-      min-height: 150px;
-    }
-
-    .form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      width: 100%;
-      margin-top: 20px;
-      height: 100%;
-      gap: 20px;
-    }
-
-    #uploadBtn {
-      top: 150px;
-      font-family: calibri;
-      color: #333;
-      width: 150px;
-      padding: 10px;
-      border-radius: 10px;
-      border: 2px dashed #2e1782;
-      text-align: center;
-      background-color: #ddd;
-      cursor: pointer;
-    }
-
-
-    button[type="submit"] {
-      width: 100px;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #11a029;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .title {
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .bodyResults {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 10px;
-      width: 100%;
-
-      > div.artResult {
-          width: 100%;
-          background-color: #e3e3e376;
-          border-radius: 10px;
-          padding: 10px;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          justify-content: flex-start;
-          gap: 10px;
-        }
-      }
-      .titleResult {
-        font-weight: 600;
-        color: #263263;
-      }
-      .results{
-          padding-left: 10px;
-      }
-      </style>
+  <link rel="stylesheet" href="{% static 'css/patrones.css' %}">
+  
 </head>
 
 <body>
+  <nav class="navBar">
+    <div class="title">
+      <h1>Patrones</h1>
+    </div>
+    <ul class="navItems">
+      <li>
+          <a href="/Conversor/menu">
+            Inicio
+          </a>
+        </li>
+      </li>
+      <li class="drop">
+        Conversiones
+        <div class="dropDown">
+          <a class="dropdown-item" href="{% url 'conversor:binario' %}">Binario</a>
+          <a class="dropdown-item" href="{% url 'conversor:hexadecimal' %}">Hexadecimal</a>
+          <a class="dropdown-item" href="{% url 'conversor:octal' %}">Octal</a>
+          <a class="dropdown-item" href="{% url 'conversor:decimal' %}">Decimal</a>
+        </div>
+      </li>
+      <li class="drop">
+        Patrones
+        <div class="dropDown">
+          <a class="dropdown-item" href="{% url 'patrones:cargarArchivo' %}">Analizador</a>
+          <a class="dropdown-item" href="{% url 'patrones:listaArchivos' %}">Lista de archivos</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
   <main class="container">
     <section class="content">
 
@@ -166,20 +91,7 @@
         </div>
     </section>
   </main>
-  <script>
-    const getFile = () => {
-      document.getElementById('upFile').click();
-    }
-
-    const sub = (obj, e) => {
-      var file = obj.value;
-      var fileName = file.split("\\");
-      document.getElementById("uploadBtn").innerHTML = fileName[fileName.length - 1];
-      document.getElementById('form').submit();
-      e.preventDefault();
-    }
-  </script>
-  </script>
+ <script src="{% static 'js/patrones.js' %}"></script>
 </body>
 
 </html>
