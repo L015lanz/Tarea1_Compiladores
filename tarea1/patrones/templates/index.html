@@ -4,56 +4,182 @@
 
 <html>
 
-  <head>
+<head>
 
-    <title> Las aventuras de mi gato Lucky </title>
+  <title> Las aventuras de mi gato Lucky </title>
 
-    <meta http-equiv = "Content-Type" content = "text / html; charset = utf-8">
-    <meta name = "description" content = "Las aventuras de mi gato favorito Lucky, con historias, fotos y películas">
-    <meta name = "keywords" content = "cat, Lucky, pet, animal">
+  <meta http-equiv="Content-Type" content="text / html; charset = utf-8">
+  <meta name="description" content="Las aventuras de mi gato favorito Lucky, con historias, fotos y películas">
+  <meta name="keywords" content="cat, Lucky, pet, animal">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: poppins, sans-serif;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px;
+      background-color: #f5f5f5;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      width: 90%;
+      max-width: 500px;
+      min-height: 150px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 20px;
+      height: 100%;
+      gap: 20px;
+    }
+
+    #uploadBtn {
+      top: 150px;
+      font-family: calibri;
+      color: #333;
+      width: 150px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px dashed #2e1782;
+      text-align: center;
+      background-color: #ddd;
+      cursor: pointer;
+    }
 
 
-  </head>
+    button[type="submit"] {
+      width: 100px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #11a029;
+      color: #fff;
+      cursor: pointer;
+    }
 
-  <body>
+    .title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
 
-    <form method="post" class="form-send" enctype="multipart/form-data">
+    .bodyResults {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      width: 100%;
+
+      > div.artResult {
+          width: 100%;
+          background-color: #e3e3e376;
+          border-radius: 10px;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 10px;
+        }
+      }
+      .titleResult {
+        font-weight: 600;
+        color: #263263;
+      }
+      .results{
+          padding-left: 10px;
+      }
+      </style>
+</head>
+
+<body>
+  <main class="container">
+    <section class="content">
+
+      <form method="post" class="form-send" enctype="multipart/form-data" id="form">
         {% csrf_token %}
-        <input type="file" name="myfile">
-        <button type="submit">Subir Archivo</button>
-    </form>
-   
-    {%if analisis %}
+        <div id="uploadBtn" onclick="getFile()">clic para subir archivo</div>
+        <div style="height: 0px; width: 0px; overflow:hidden">
+          <input type="file" name="myfile" id="upFile" onchange="sub(this)">
+        </div>
+        <!-- <button type="submit">Subir Archivo</button> -->
+      </form>
+      
+      {%if analisis %}
 
-    <div>Resultados del archivo {{nombreArchivo}}</div>
-    <div>
+      <div class="title">Resultados del archivo {{nombreArchivo}}</div>
+      <div class="bodyResults">
 
-     <div>
-         <div>Secuencia de números encontrados </div>
-     {% for elemento in numeros %}
-         <div>{{ elemento }}</div>
-     {% endfor %}
-     </div>
+        <div class="artResult">
+          <div class="titleResult">Secuencia de números encontrados </div>
+          {% for elemento in numeros %}
+          <div class="results">{{ elemento }}</div>
+          {% endfor %}
+        </div>
 
-     <div>
-         <div>Secuencia de números seguidos de letras encontrados </div>
-           {% for elemento in numerosLetras%}
-         <div>{{ elemento }}</div>
-         {% endfor %}
-     </div>
-     <div>
-         <div>Secuencia de 3 vocales iguales encontradas </div>
-         {% for elemento in vocales %}
-         <div>{{ elemento }}</div>
-        {% endfor %}
-     </div>
-     <div>
-         <div>Secuencia de palabras con caracteres especiales </div>
-         {% for elemento in caracteres %}
-         <div>{{ elemento }}</div>
-        {% endfor %}
-     </div>
-     {%endif%}
-  </body>
+        <div class="artResult">
+          <div class="titleResult">Secuencia de números seguidos de letras encontrados </div>
+          {% for elemento in numerosLetras%}
+          <div class="results">{{ elemento }}</div>
+          {% endfor %}
+        </div>
+        <div class="artResult">
+          <div class="titleResult">Secuencia de 3 vocales iguales encontradas </div>
+          {% for elemento in vocales %}
+          <div class="results">{{ elemento }}</div>
+          {% endfor %}
+        </div>
+        <div class="artResult">
+          <div class="titleResult">Secuencia de palabras con caracteres especiales </div>
+          {% for elemento in caracteres %}
+          <div class="results">{{ elemento }}</div>
+          {% endfor %}
+        </div>
+        {%endif%}
+        </div>
+    </section>
+  </main>
+  <script>
+    const getFile = () => {
+      document.getElementById('upFile').click();
+    }
+
+    const sub = (obj, e) => {
+      var file = obj.value;
+      var fileName = file.split("\\");
+      document.getElementById("uploadBtn").innerHTML = fileName[fileName.length - 1];
+      document.getElementById('form').submit();
+      e.preventDefault();
+    }
+  </script>
+  </script>
+</body>
 
 </html>

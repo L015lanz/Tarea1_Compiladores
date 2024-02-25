@@ -16,6 +16,13 @@ class analizador:
                 l1.append(elemento)
         return l1  
 
+    def filtrarResultados(self,l1):
+        conjunto_resultante = set(l1)
+
+
+        lista_filtrada = list(conjunto_resultante)  
+        return lista_filtrada  
+
     def analizar(self,archivo):
          
                 
@@ -43,10 +50,10 @@ class analizador:
                     
     def retornarResultados(self):
         resultDict = {
-         'numeros': self.lista_numeros,
-         'numerosLetras': self.lista_numeros_letras,
-         'vocales': self.lista_3vocales,
-         'caracteres': self.lista_caracteres
+         'numeros': self.filtrarResultados(self.lista_numeros),
+         'numerosLetras': self.filtrarResultados(self.lista_numeros_letras),
+         'vocales': self.filtrarResultados(self.lista_3vocales),
+         'caracteres': self.filtrarResultados(self.lista_caracteres)
         }    
         return resultDict
             

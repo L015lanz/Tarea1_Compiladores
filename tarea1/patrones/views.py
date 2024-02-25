@@ -5,7 +5,6 @@ from django.core.files.storage import   FileSystemStorage
 from django.shortcuts import redirect
 
 from .analizador import analizador
-  
 
 
 def cargarArchivo(request):
@@ -22,7 +21,7 @@ def cargarArchivo(request):
         return redirect(f'http://localhost:8000/patrones/resultados/{file_name}')
         
     analisis=False
-    return render(request,'index.html',{'analisis':analisis})
+    return render(request,'index.html',{'analisis':analisis, 'css':settings.STATIC_URL})
 
 
 

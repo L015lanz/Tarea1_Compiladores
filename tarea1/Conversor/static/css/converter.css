@@ -1,0 +1,55 @@
+/* Estilos para la pantalla negra y resultado en estilo LCD */
+@font-face {
+    font-family: 'DS-Digital';
+    src: url(/static/font/DS-DIGI.TTF);
+}
+
+#result-screen {
+    font-family: 'DS-Digital', sans-serif;
+    font-size: 2em;
+    background-color: black;
+    color: orange;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.title-res{
+    font-family: 'DS-Digital', sans-serif;
+    font-size: 2em;
+    background-color: black;
+    color: orange;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+#convertButton {
+    background-color: #FFA07A;
+    border-color: #FFA07A;
+    color: #fff;
+    border-radius: 0;
+    cursor: initial !important;
+}
+
+/* Ajustes de estilo para el formulario */
+#converter-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Puedes agregar más estilos según tus preferencias */
+
+/* Estilo de scrollbar */
+
+.scrollbar {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #FFA07A #f8f9fa;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 12px;
+    opacity: 0.1;
+}

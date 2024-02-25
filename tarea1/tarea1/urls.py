@@ -21,7 +21,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('patrones/',include('patrones.urls'))
+    path('patrones/',include('patrones.urls')),
+    path('Conversor/',include('Conversor.urls')), 
+
+
 ]
 
 if settings.DEBUG:

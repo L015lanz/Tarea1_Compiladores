@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Conversiones</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="menu">Calculadora de Conversiones</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="menu">Inicio<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Conversores
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a onclick="redirectBinario();" class="dropdown-item" href="binario">Binario</a>
+                        <a onclick="redirectHexadecimal();" class="dropdown-item" href="hexadecimal">Hexadecimal</a>
+                        <a onclick="redirectOctal();" class="dropdown-item" href="octal">Octal</a>
+                        <a onclick="redirectDecimal();" class="dropdown-item" href="decimal">Decimal</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container my-3">
+        <h1 style="text-align:center;">Calculadora de Conversiones</h1>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="conversion-menu row justify-content-center align-items-center">
+            <div class="boton col-md-6 mb-3">
+                <button onclick="redirectBinario();" class="btn btn-primary btn-lg btn-block" data-conversion="binary">
+                    <i class="fas fa-calculator"></i> Binario
+                </button>
+            </div>
+            <div class="boton col-md-6 mb-3">
+                <button onclick="redirectHexadecimal();" class="btn btn-primary btn-lg btn-block" data-conversion="hexadecimal">
+                    <i class="fas fa-calculator"></i> Hexadecimal
+                </button>
+            </div>
+            <div class="boton col-md-6 mb-3">
+                <button onclick="redirectOctal();" class="btn btn-primary btn-lg btn-block" data-conversion="octal">
+                    <i class="fas fa-calculator"></i> Octal
+                </button>
+            </div>
+            <div class="boton col-md-6 mb-3">
+                <button onclick="redirectDecimal();" class="btn btn-primary btn-lg btn-block" data-conversion="decimal">
+                    <i class="fas fa-calculator"></i> Decimal
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.8.0"></script>
+    <script src="https://kit.fontawesome.com/44981fe972.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/Script.js' %}"></script>
+</body>
+</html>

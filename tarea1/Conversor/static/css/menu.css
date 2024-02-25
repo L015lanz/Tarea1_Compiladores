@@ -1,0 +1,47 @@
+body {
+    background-color: #f8f9fa;
+}
+
+/* menu.css */
+
+/* Estilo común para todos los botones */
+.conversion-menu button {
+    width: 250px; /* Tamaño fijo para todos los botones */
+    height: 250px; /* Tamaño fijo para todos los botones */
+    border-radius: 0; /* Hace que los botones sean cuadrados */
+    text-align: center; /* Centra el texto dentro del botón */
+}
+
+/* Estilo para el botón Binario */
+.conversion-menu button[data-conversion="binary"] {
+    background-color: #FFA07A; /* Color salmón para el botón Binario */
+    border-color: #FFA07A; /* Borde del mismo color para mantener la apariencia */
+    color: #fff; /* Texto en color blanco para mayor visibilidad */
+}
+
+/* Estilo para el botón Hexadecimal */
+.conversion-menu button[data-conversion="hexadecimal"] {
+    background-color: #98FB98; /* Color verde claro para el botón Hexadecimal */
+    border-color: #98FB98; /* Borde del mismo color para mantener la apariencia */
+    color: #000; /* Texto en color negro para mayor visibilidad */
+}
+
+/* Estilo para el botón Octal */
+.conversion-menu button[data-conversion="octal"] {
+    background-color: #87CEEB; /* Color celeste para el botón Octal */
+    border-color: #87CEEB; /* Borde del mismo color para mantener la apariencia */
+    color: #fff; /* Texto en color blanco para mayor visibilidad */
+}
+
+/* Estilo para el botón Decimal */
+.conversion-menu button[data-conversion="decimal"] {
+    background-color: #FFD700; /* Color dorado para el botón Decimal */
+    border-color: #FFD700; /* Borde del mismo color para mantener la apariencia */
+    color: #000; /* Texto en color negro para mayor visibilidad */
+}
+
+.boton{
+    display: flex;
+    flex: auto;
+    justify-content: center;
+}
