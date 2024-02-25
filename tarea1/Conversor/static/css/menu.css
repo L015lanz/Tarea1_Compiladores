@@ -1,0 +1,207 @@
+body {
+    background-color: black !important;
+    /*background-image: url(/static/img/bg3.png);*/
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+/*
+#07000E
+#EECC8D
+#F08D33
+#D75404
+#8A2C02
+*/
+
+/*Estilos NAV*/
+
+.fondoNe{
+    background-color: black !important;
+}
+
+.fondoNa{
+    background-color: orange !important;
+}
+
+.fuenteNa{
+    color: orange !important;
+}
+.tr{
+    /*background-color: rgba(255,255,255,0.5) !important;
+    height: 100vh;*/
+    background-color: transparent !important;
+}
+
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: black; 
+    color: orange; 
+}
+
+
+/* Estilo común para todos los botones */
+.conversion-menu button {
+    width: 250px; 
+    height: 150px;
+    border-radius: 15; 
+    text-align: center; 
+}
+
+/* Estilo para el botón Binario */
+.conversion-menu button[data-conversion="binary"] {
+    background-color: #F08D33; 
+    border-color: #F08D33; 
+    color: white; 
+}
+
+/* Estilo para el botón Hexadecimal */
+.conversion-menu button[data-conversion="hexadecimal"] {
+    background-color: #D75404; 
+    border-color: #D75404; 
+    color: white; 
+}
+
+/* Estilo para el botón Octal */
+.conversion-menu button[data-conversion="octal"] {
+    background-color: #F08D33; 
+    border-color: #F08D33;
+    color: white; 
+}
+
+/* Estilo para el botón Decimal */
+.conversion-menu button[data-conversion="decimal"] {
+    background-color: #D75404;
+    border-color: #D75404;
+    color: white; 
+}
+
+.boton{
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    color: white;
+}
+
+.scrollbar {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #FFA07A #f8f9fa;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 12px;
+    opacity: 0.1;
+}
+
+#moonIcon{
+    color: #FFA07A;
+}
+
+#sunIcon{
+    color: #FFA07A;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #FFA07A !important;
+    border-color: white !important;
+    background-color: #FFA07A !important;
+}
+
+
+
+
+
+body.light-mode {
+    background-color: #f8f9fa !important;
+}
+
+body.light-mode .tr{
+    background-color: #f8f9fa !important;
+}
+
+body.light-mode .dropdown-menu .dropdown-item:hover {
+    background-color: white; 
+    color: #F08D33;
+}
+
+body.light-mode #result-screen {
+    background-color: #f8f9fa;
+    color: black
+}
+
+body.light-mode .title-res{
+    background-color: #f8f9fa;
+    color: #FFA07A;
+}
+
+body.light-mode #convertButton {
+    background-color: #FFA07A;
+    border-color: black;
+    color: #f8f9fa;
+}
+
+body.light-mode .fondoNe{
+    background-color: #f8f9fa !important;
+}
+
+body.light-mode .fondoNa{
+    background-color: #FFA07A !important;
+}
+
+body.light-mode .fuenteNa{
+    color: #FFA07A!important;
+}
+
+body.light-mode .tr{
+    background-color: #f8f9fa !important;
+}
+
+body.light-mode .dropdown-menu .dropdown-item:hover {
+    background-color: white; 
+    color: #F08D33;
+}
+
+body.light-mode #result-screen {
+    background-color: #f8f9fa;
+    color: black
+}
+
+body.light-mode .title-res{
+    background-color: #f8f9fa;
+    color: #FFA07A;
+}
+
+body.light-mode #convertButton {
+    background-color: #FFA07A;
+    border-color: black;
+    color: #f8f9fa;
+}
+
+body.light-mode .fuenteNa{
+    color: black !important;
+}
+
+body.light-mode .conversion-menu button[data-conversion="binary"] {
+    background-color: #F08D33; 
+    border-color: #F08D33; 
+    color: black; 
+}
+
+body.light-mode .conversion-menu button[data-conversion="hexadecimal"] {
+    background-color: #D75404; 
+    border-color: #D75404; 
+    color: black; 
+}
+
+body.light-mode .conversion-menu button[data-conversion="octal"] {
+    background-color: #F08D33; 
+    border-color: #F08D33;
+    color: black; 
+}
+
+body.light-mode .conversion-menu button[data-conversion="decimal"] {
+    background-color: #D75404;
+    border-color: #D75404;
+    color: black; 
+}
+

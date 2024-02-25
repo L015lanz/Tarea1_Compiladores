@@ -1,0 +1,23 @@
+Dibujo 1  - Ninguno
+
+Dibujo 2 - Dibujo 1
+
+Diseño Digital - Ninguna
+
+Electiva 2 - Ninguna
+
+Seguridad Informatica - Diseño
+
+Optativa 2 - Ninguna
+
+Industria del Software - Ninguna
+
+Auditoria Informatia - Seguridad
+
+Gerencia Informatica - Seguridad
+
+Optativa 3 - Ninguna
+
+Topicos - Gerencia
+
+Seminario
