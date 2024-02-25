@@ -1,0 +1,10 @@
+Dibujo 1
+Diseño Digital  11,4
+Compiladores sa 9-12,12-3
+Sistemas Expertos 8
+Industria del Software 7,7,1 
+
+
+
+7,8,11,1
+9
