@@ -1,18 +1,54 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/patrones.css' %}">
     <title>Lista de archivos en Media</title>
 </head>
 <body>
-    <div>
-    <h1>Archivos en Media</h1>
-    <ul>
-        {% for nombre_archivo in nombres_archivos %}
-        <li><a href="http://localhost:8000/patrones/resultados/{{nombre_archivo}}">{{ nombre_archivo }}</a></li>
-        {% endfor %}
-    </ul>
+
+    <nav class="navBar">
+        <div class="title">
+          <h1>Patrones</h1>
+        </div>
+        <ul class="navItems">
+          <li>
+              <a href="/Conversor/menu">
+                Inicio
+              </a>
+            </li>
+          </li>
+          <li class="drop">
+            Conversiones
+            <div class="dropDown">
+                <a class="dropdown-item" href="{% url 'conversor:binario' %}">Binario</a>
+                <a class="dropdown-item" href="{% url 'conversor:hexadecimal' %}">Hexadecimal</a>
+                <a class="dropdown-item" href="{% url 'conversor:octal' %}">Octal</a>
+                <a class="dropdown-item" href="{% url 'conversor:decimal' %}">Decimal</a>
+            </div>
+          </li>
+          <li class="drop">
+            Patrones
+            <div class="dropDown">
+                <a class="dropdown-item" href="{% url 'patrones:cargarArchivo' %}">Analizador</a>
+                <a class="dropdown-item" href="{% url 'patrones:listaArchivos' %}">Lista de archivos</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+
+    <div class="container">
+        <div class="content">
+            <h1>Archivos en Media</h1>
+            <ul class="listFiles">
+                {% for nombre_archivo in nombres_archivos %}
+                <li><a href="resultados/{{nombre_archivo}}">{{ nombre_archivo }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </body>
 </html>

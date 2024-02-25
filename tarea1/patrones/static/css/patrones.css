@@ -1,0 +1,210 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: poppins, sans-serif;
+}
+
+h1 {
+color: #333;
+}
+
+.container {
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+padding: 30px;
+background-color: #f5f5f5;
+}
+
+.content {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+background-color: #fff;
+width: 90%;
+max-width: 500px;
+min-height: 150px;
+}
+
+.form {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+width: 100%;
+margin-top: 20px;
+height: 100%;
+gap: 20px;
+}
+
+#uploadBtn {
+top: 150px;
+font-family: calibri;
+color: #333;
+width: 150px;
+padding: 10px;
+border-radius: 10px;
+border: 2px dashed #2e1782;
+text-align: center;
+background-color: #ddd;
+cursor: pointer;
+}
+
+
+button[type="submit"] {
+width: 100px;
+padding: 10px;
+border: none;
+border-radius: 5px;
+background-color: #11a029;
+color: #fff;
+cursor: pointer;
+}
+
+.title {
+font-size: 1.2rem;
+font-weight: 600;
+}
+
+.bodyResults {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+gap: 10px;
+width: 100%;
+
+> div.artResult {
+width: 100%;
+background-color: #e3e3e376;
+border-radius: 10px;
+padding: 10px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+gap: 10px;
+}
+}
+.titleResult {
+font-weight: 600;
+color: #263263;
+}
+.results{
+padding-left: 10px;
+}
+
+
+/* NAVBAR qje pedo*/
+
+.navBar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 70px;
+    padding: 10px;
+    justify-content: flex-start;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul.navItems {
+    display: flex;
+    text-decoration: none;
+    gap: 20px;
+    height: 100%;
+    
+    > li{
+        cursor: pointer;
+        list-style: none;
+        display:flex;
+        align-items: center;
+    }
+    >li:hover{
+        color: #FFA07A;
+        > a {
+            color: #FFA07A;
+        }
+    }
+}
+
+.drop {
+    position: relative;
+}
+
+.drop:hover{
+    
+    .dropDown {
+        display: flex;
+    }
+}
+
+.dropDown {
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    width: 150px;
+    display: none;
+    flex-direction: column;
+    background-color: #FFA07A;
+    border-radius: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    > a {
+        font-size: 0.85rem;
+        width: 100%;
+        height: 35px;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+    }
+    > a:hover {
+        background-color: #fff;
+        color: #FFA07A;
+    }
+}
+
+
+/* LISTA DE ARCHIVOS */
+
+.listFiles {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    > li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        list-style: none;
+        height: 55px;
+        font-size:0.9rem;
+        padding-left: 20px;
+        cursor: pointer; 
+        > a {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+    }
+    > li:hover{
+        background-color: #FFA07A;
+        border-radius: 3px;
+        > a {
+            color: #fff;
+        }
+
+    }
+}
